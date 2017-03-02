@@ -3,10 +3,10 @@ use Email::Sender::Simple qw(sendmail);
 use Email::Sender::Transport::SMTP::TLS qw();
 use Email::Simple;
 use Try::Tiny;
-#########################################
-# EM - automated send to group-recipients
-#                  see NOTE section below
-# SETUP #################################
+#################################
+# EM - automated group-based send
+#          see NOTE section below
+# SETUP #########################
 print "batch: ";
 my $batch = <>; chomp $batch;
 print "sender account: ";
@@ -16,7 +16,7 @@ my $pass = <>; chomp $pass;
 print "Readn LIST\n"; 
 open(my $lifh, '<', 'LIST');
 my @list = readline $lifh; chomp @list;
-print "@list\n";
+
 
 # SENDER ###############################
 my $trans = Email::Sender::Transport::SMTP::TLS->new(
