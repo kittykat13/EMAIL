@@ -5,8 +5,7 @@ use Email::Simple;
 use Try::Tiny;
 #################################
 # EM - automated group-based send
-#      pdf password 
-#          see NOTE section below
+#      password-protected pdf 
 # SETUP #########################
 print "batch: ";
 my $batch = <>; chomp $batch;
