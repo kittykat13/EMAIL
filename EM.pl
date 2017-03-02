@@ -13,7 +13,11 @@ print "sender account: ";
 my $sender = <>; chomp $sender;
 print "$sender password: "; chomp $sender;
 my $pass = <>; chomp $pass;
-print "Readn 
+print "Readn LIST\n"; 
+open(my $lifh, '<', 'LIST');
+my @list = readline $lifh; chomp @list;
+print "@list\n";
+
 # SENDER ###############################
 my $trans = Email::Sender::Transport::SMTP::TLS->new(
     host => 'smtp.gmail.com',
