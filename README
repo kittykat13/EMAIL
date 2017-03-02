@@ -1,6 +1,4 @@
 #######
 # EMAIL
-automated email
-
-LIST - ASCII Recipient Addresses
-ATT - Password Protected Attachment 
+automated email of a group of recipients
+each with their own pasword-protected pdf attachment
