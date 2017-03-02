@@ -5,6 +5,7 @@ use Email::Simple;
 use Try::Tiny;
 #################################
 # EM - automated group-based send
+#      pdf password 
 #          see NOTE section below
 # SETUP #########################
 print "batch: ";
@@ -18,14 +19,14 @@ open(my $lifh, '<', 'LIST');
 my @list = readline $lifh; chomp @list;
 
 
-# SENDER ###############################
+# SENDER #########################
 my $trans = Email::Sender::Transport::SMTP::TLS->new(
     host => 'smtp.gmail.com',
     port => '587',
     username => $sender,
     password => $pass,
 );
-# LOOP #################################
+# LOOP ############################
 my $email = Email::Simple->create(
     header => [
         To => $i,
@@ -40,7 +41,7 @@ try {
     die "Error sending email: $_";
 };
 
-# NOTES #################
+# NOTES ###########################
 # GOOGLE
 # If the sender is a google account change this setting
 # https://www.google.com/settings/security/lesssecureapps
