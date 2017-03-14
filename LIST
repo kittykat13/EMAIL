@@ -1,6 +1,0 @@
-#######################
-# LIST - recipient dump
-# FORMAT ##############
-# "email attachment pin\n"
-# example:
-# example@gmail.com EEname 5555

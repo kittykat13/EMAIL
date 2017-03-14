@@ -1,0 +1,6 @@
+############################
+# LIST - recipients to email
+# FORMAT ###################
+# "email attachment pin\n"
+# example:
+# example@gmail.com EEname.pdf 5555
