@@ -5,6 +5,7 @@
 # If docs come from an Excel file 
 PDF.vba - print a range of sheets into individual pdfs
 
-LIST.txt - email address iterations
+MASTER.txt - email address databank
+LIST.txt - temp email address iterations
 ATT.pl - encrypt pdf files with pin
 EM.pl - send emails
