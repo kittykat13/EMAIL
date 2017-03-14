@@ -1,5 +1,6 @@
 ############################
 # LIST - recipients to email
+# create each time from MASTER.txt
 # FORMAT ###################
 # "email attachment pin\n"
 # example:
