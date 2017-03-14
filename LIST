@@ -1,6 +1,6 @@
 #######################
 # LIST - recipient dump
 # FORMAT ##############
-"email attachment\n"
-example
-example@gmail.com MNat
+# "email attachment pin\n"
+# example:
+# example@gmail.com EEname 5555
