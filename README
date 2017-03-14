@@ -1,8 +1,10 @@
-#######################################################
-# EMAIL ###############################################
-# automated email of a group of recipients
-# each with their own pasword-protected pdf attachment
+##############################################################
+# EMAIL ######################################################
+# automated group emails with pasword-protected pdf attachment
 
-ATT.pl - encrypt pdf files with pin
-LIST.txt - iteration email addresses
+# If docs come from an Excel file 
 PDF.vba - print a range of sheets into individual pdfs
+
+LIST.txt - email address iterations
+ATT.pl - encrypt pdf files with pin
+EM.pl - send emails
