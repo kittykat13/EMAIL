@@ -1,11 +1,12 @@
 ##############################################################
-# EMAIL ######################################################
+# EMAIL 
 # automated group emails with pasword-protected pdf attachment
 
+#######
+# STEPS
 # If docs come from an Excel file 
-PDF.vba - print a range of sheets into individual pdfs
-
-MASTER.txt - email address databank
-LIST.txt - temp email address iterations
-ATT.pl - encrypt pdf files with pin
-EM.pl - send emails
+0 PDF.vba - print a range of sheets into individual pdfs
+1 MASTER.txt - email address databank
+2 LIST.txt - temp email address iterations
+3 ATT.pl - encrypt pdf files with pin
+4 EM.pl - send emails
