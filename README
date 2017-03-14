@@ -4,5 +4,5 @@
 # each with their own pasword-protected pdf attachment
 
 ATT.pl - encrypt pdf files with pin
-LIST.txt - ASCII email addresses
+LIST.txt - iteration email addresses
 PDF.vba - print a range of sheets into individual pdfs
