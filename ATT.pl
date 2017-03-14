@@ -2,15 +2,15 @@ use strict; use warnings;
 use CAM::PDF;
 ###########################
 # ATT - pdf pass protection
-# SETUP ####################
+# SETUP ###################
 my $pre_location = 'PRE';
 my $final_location = 'ATT';
 my $listi = 'LIST.txt';
-# GET ITER VIA LIST.txt ####
+# GET ITER VIA LIST.txt ###
 open(my $listfh, '<', $listi);
 my @list = readline $listfh; chomp @list;
 print "@list\n";
-# PREP ATTACHMENTS #########
+# PREP ATTACHMENTS ########
 foreach my $i (@list) {
   my @tmp = split(' ', $i, 3);
   my $addr = $tmp[0]; my $attach = $tmp[1]; my $pin = $tmp[2];
