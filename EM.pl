@@ -5,7 +5,11 @@ use Email::Simple;
 use Try::Tiny;
 #################################
 # EM - automated group-based send
-#   password-protected-pdf attach 
+#   password-protected-pdf attach
+# DESC ##########################
+# prior steps: 
+# 1) PDF.vba - vba to pdf (if necessary)
+# 2) ATT.pl - password protect attachment
 # SETUP #########################
 print "batch: ";
 my $batch = <>; chomp $batch;
@@ -21,9 +25,11 @@ my %list;
 open(my $lifh, '<', 'LIST');
 my @set = readline $lifh; chomp @pre;
 foreach $line (@set) {
-    my @i = split(" ", $line, 2);
+    my @i = split(" ", $line, 3);
     $list{$i[0]} = $i[1];
 }
+# SKIP rm key without file in ATT folder
+#    next unless exists $att;
 # SENDER #########################
 my $trans = Email::Sender::Transport::SMTP::TLS->new(
     host => 'smtp.gmail.com',
@@ -34,6 +40,7 @@ my $trans = Email::Sender::Transport::SMTP::TLS->new(
 # LOOP ############################
 foreach $ee (keys %list) {
     my $att = $list{$ee};
+
     my $email = Email::Simple->create(
         header => [
             To => $ee,
