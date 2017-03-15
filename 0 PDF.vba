@@ -1,10 +1,17 @@
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-' PDF.vba - print a range of sheets into individual pdfs
-
-sub pdf()
-    ThisWorkbook.Sheets("Sheet").Select
-    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:= _
-        "Sheet.pdf", Quality:= xlQualityStandard, IncludeDocProperties:=True, _
+'''''''''''''''''''''''''''''''''''''''''
+' PDF.vba - print Excel worksheets to pdf
+' Select (highlight) range of sheets 
+' To be printed into individual pdfs
+Sub pdf()
+    Dim ws As Worksheet
+    Dim w As String
+    For Each ws In ActiveWindow.SelectedSheets
+        w = ActiveSheet.Name
+        MsgBox (w)
+        ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, _
+        Filename:=w & ".pdf", _
+        Quality:=xlQualityStandard, _
+        IncludeDocProperties:=True, _
         IgnorePrintAreas:=False, OpenAfterPublish:=True
-    
-end sub
+    Next
+End Sub
