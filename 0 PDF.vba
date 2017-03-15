@@ -7,7 +7,8 @@ Sub pdf()
     Dim w As String
     For Each ws In ActiveWindow.SelectedSheets
         w = ActiveSheet.Name
-        MsgBox (w)
+        ' Troubleshoot 
+        ' MsgBox (w)
         ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, _
         Filename:=w & ".pdf", _
         Quality:=xlQualityStandard, _
