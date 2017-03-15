@@ -9,17 +9,16 @@ my $listi = 'LIST.txt';
 # GET ITER VIA LIST.txt ###
 open(my $listfh, '<', $listi);
 my @list = readline $listfh; chomp @list;
-print "@list\n";
 # PREP ATTACHMENTS ########
 foreach my $i (@list) {
   my @tmp = split(' ', $i, 3);
   my $addr = $tmp[0]; my $attach = $tmp[1]; my $pin = $tmp[2];
   my $x = "$pre_location\\$attach";
-  print "$x\n";
 # ENCRYPT WITH PIN #######
   my $pdf = CAM::PDF->new($x) or die "fail\n";
   $pdf->setPrefs($pin,$pin);
 # SAVE FINAL ATTACHMENT ##
   my $doc = "$final_location\\$attach";
   $pdf->output($doc);
+  print "$x\n |stored in| $doc\n";
 }
