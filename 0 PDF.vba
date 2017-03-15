@@ -12,6 +12,7 @@ Sub pdf()
       ' MsgBox (w)
         ws.Select
         ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, _
+      ' Filename:="Path\to\dir" & w & ".pdf", _
         Filename:=w & ".pdf", _
         Quality:=xlQualityStandard, _
         IncludeDocProperties:=True, _
