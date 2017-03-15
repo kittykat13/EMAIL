@@ -1,8 +1,7 @@
 use strict; use warnings;
 use Email::Stuffer qw(send);
-use Email::Sender::Simple; # qw(sendmail);
+use Email::Sender::Simple;
 use Email::Sender::Transport::SMTP::TLS qw();
-#use Try::Tiny;
 #################################
 # EM - automated group-based send
 #   password-protected-pdf attach
@@ -19,7 +18,6 @@ print "$sender password: "; chomp $sender;
 my $pass = <>; chomp $pass;
 my %list; # key = email; value = attachment;
 # LIST ##########################
-print "Reading LIST.txt\n";
 open(my $lifh, '<', 'LIST.txt');
 my @set = readline $lifh; chomp @set;
 foreach my $line (@set) {
@@ -45,7 +43,7 @@ foreach my $ee (keys %list) {
         ->text_body($body)
         ->attach_file($att)
         ->transport($trans)
-        ->send or die "error in trans\n";
+        ->send or print "error in trans $ee\n";
 }
 # NOTES ###########################
 # GOOGLE
