@@ -11,7 +11,7 @@ use Email::Sender::Transport::SMTP::TLS qw();
 # 2) ATT.pl - password protect attachment
 # SETUP #########################
 print "batch: ";
-my $batch = <>; chomp $batch;
+my $batch = readline *STDIN; chomp $batch;
 print "sender account: ";
 my $sender = <>; chomp $sender;
 print "$sender password: "; chomp $sender;
